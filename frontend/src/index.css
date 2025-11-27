@@ -1,0 +1,66 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap&subset=cyrillic');
+
+@import "tailwindcss";
+
+@theme {
+  --font-sans: "Inter", system-ui, sans-serif;
+  --color-background: #2A2A30;
+  --color-dark: #1D1D1D;
+  --color-text: #FFFFFF;
+  --color-text-secondary: #4E4E50;
+  --color-accent: #D23D3D;
+}
+
+* {
+  transition-property: color, background-color, border-color, transform, opacity, scale;
+  transition-duration: 0.2s;
+  transition-timing-function: ease-in-out;
+}
+
+#root {
+  background-color: var(--color-background);
+  color: #fff;
+}
+
+html, body, #root {
+  height: 100dvh;
+}
+
+.sidebar {
+  transition: width 0.3s ease-in-out;
+}
+
+.sidebar__text {
+  transition: all 0.4s ease-in-out;
+}
+
+@keyframes drawLine {
+    to {
+        strokeDashoffset: 0;
+    }
+}
+
+@keyframes drawArea {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes fadeIn {
+    to {
+        opacity: 1;
+    }
+}
+
+/* Для предотвращения скачков при изменении размера */
+.chart-container {
+    width: 100%;
+    height: 250px;
+    position: relative;
+    overflow: hidden;
+}
